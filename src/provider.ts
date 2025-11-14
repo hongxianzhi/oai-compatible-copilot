@@ -288,14 +288,18 @@ export class HuggingFaceChatModelProvider implements LanguageModelChatProvider {
 		options: ProvideLanguageModelChatResponseOptions
 	) {
 		// temperature
-		const oTemperature = options.modelOptions?.temperature ?? 0;
+		const oTemperature = options.modelOptions?.temperature ?? null;
 		const temperature = um?.temperature ?? oTemperature;
-		rb.temperature = temperature;
+		if(typeof temperature === 'number'){
+			rb.temperature = temperature;
+		}
 
 		// top_p
-		const oTopP = options.modelOptions?.top_p ?? 1;
+		const oTopP = options.modelOptions?.top_p ?? null;
 		const topP = um?.top_p ?? oTopP;
-		rb.top_p = topP;
+		if(typeof topP === 'number'){
+			rb.top_p = topP;
+		}
 
 		// If user model config explicitly sets sampling params to null, remove them so provider defaults apply
 		if (um && um.temperature === null) {
