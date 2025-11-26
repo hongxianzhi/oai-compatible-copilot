@@ -4,7 +4,7 @@ import type { HFModelItem } from "./types";
 
 export function activate(context: vscode.ExtensionContext) {
 	// Build a descriptive User-Agent to help quantify API usage
-	const ext = vscode.extensions.getExtension("johnny-zhao.oai-compatible-copilot");
+	const ext = vscode.extensions.getExtension("hongxianzhi.oai-compatible-copilot");
 	const extVersion = ext?.packageJSON?.version ?? "unknown";
 	const vscodeVersion = vscode.version;
 	// Keep UA minimal: only extension version and VS Code version

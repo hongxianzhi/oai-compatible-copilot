@@ -98,7 +98,7 @@ export async function prepareLanguageModelChatInformation(
 				const maxInput = Math.max(1, contextLen - maxOutput);
 				entries.push({
 					id: `${m.id}`,
-					name: `${m.id} OAI-Compatible`,
+					name: `${m.id} [OAIC]`,
 					tooltip: "OAI Compatible",
 					family: m.family ?? "oai-compatible",
 					version: "1.0.0",
